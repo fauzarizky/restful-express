@@ -1,0 +1,29 @@
+<%- include("partials/header") %>
+    <div class="flex flex-col justify-center items-center h-[100vh] w-[100vw] gap-5">
+        <div class="rounded-2xl bg-white shadow-md border-[3px] border-sky-500 w-[90%]">
+            <div class="p-4">
+                <blockquote>
+                    <p class="text-xl text-sky-800">
+                        <%= comment.text%>
+                    </p>
+                </blockquote>
+                <figcaption class="text-md text-sky-400">
+                    <cite title="Source Title">
+                        by - <%= comment.username %>
+                    </cite>
+                    <div class="flex justify-evenly">
+                        <a href="/comments/<%= comment.id %>/edit">Edit</a>
+                        <form action="/comments/<%= comment.id %>?_method=DELETE" method="post">
+                            <button>Delete</button>
+                        </form>
+                    </div>
+                </figcaption>
+            </div>
+        </div>
+        <a href="/">
+            <button type="button" class="bg-sky-100 p-2 rounded-md text-sky-800">
+                See All Comments
+            </button>
+        </a>
+    </div>
+    <%- include("partials/footer") %>

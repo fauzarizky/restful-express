@@ -1,0 +1,37 @@
+<%- include("partials/header") %>
+    <div class="container-fluid h-[100vh] mx-auto bg-sky-300 flex items-center justify-evenly flex-col">
+        <h1 class="text-white text-[50px] font-semibold">List Comments</h1>
+
+        <div class="flex flex-col gap-3 items-center h-[80vh] w-[50vw] overflow-auto custom-scrollbar px-2">
+            <% for(let comment of comments) { %>
+                <div class="rounded-2xl bg-white shadow-md border-[3px] border-sky-500 w-[100%]">
+                    <div class="p-4">
+                        <blockquote>
+                            <p class="text-xl text-sky-800">
+                                <%= comment.text%>
+                            </p>
+                        </blockquote>
+                        <figcaption class="text-md text-sky-400">
+                            <cite title="Source Title">
+                                by - <%= comment.username %>
+                            </cite>
+                            <div class="flex justify-evenly">
+                                <a href="/comments/<%= comment.id %>">Detail</a>
+                                <a href="/comments/<%= comment.id %>/edit">Edit</a>
+                                <form action="/comments/<%= comment.id %>?_method=DELETE" method="post">
+                                    <button>Delete</button>
+                                </form>
+                            </div>
+                        </figcaption>
+                    </div>
+                </div>
+                <%}%>
+        </div>
+        <a href="/comments/create">
+            <button type="button" class="bg-sky-100 p-2 rounded-md text-sky-800">
+                Add Comment
+            </button>
+        </a>
+    </div>
+
+    <%- include("partials/footer") %>

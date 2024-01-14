@@ -1,0 +1,17 @@
+<%- include("partials/header") %>
+    <div class="container-fluid bg-sky-300 flex flex-col items-center justify-center h-[100vh]">
+        <div class="flex items-center justify-center bg-sky-700 w-[50vw] min-h-[50vh] rounded-lg">
+            <form action="/comments/<%= comment.id %>?_method=PATCH" method="post" class="w-[90%] h-[90%] flex flex-col items-center justify-around">
+                <section class="flex items-center justify-center gap-5 bg-sky-50 min-h-[30vh] w-[80%] rounded-lg">
+                    <label for="text" class="text-sky-700 text-[25px]">Comment</label>
+                    <textarea name="text" id="text" cols="30" rows="5"><%= comment.text %></textarea>
+                </section>
+
+                <section class="flex justify-evenly items-center bg-sky-50 w-[80%] h-[5vh] rounded-lg text-sky-700">
+                    <button type="submit" class="hover:bg-sky-100 hover:p-2">Submit</button>
+                    <a href="/" class="hover:bg-sky-100 hover:p-2">See All Comments</a>
+                </section>
+            </form>
+        </div>
+    </div>
+    <%- include("partials/footer") %>

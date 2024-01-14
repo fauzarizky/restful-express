@@ -1,0 +1,24 @@
+<%- include("partials/header") %>
+    <div class="container-fluid bg-sky-300 flex flex-col items-center justify-center h-[100vh]">
+        <div class="flex items-center justify-center bg-sky-700 w-[50vw] min-h-[50vh] rounded-lg">
+            <form action="/comments" method="post" class="w-[90%] h-[90%] flex flex-col items-center justify-around">
+                <section
+                    class="flex flex-col items-center justify-center bg-sky-50 h-[30vh] w-[80%] rounded-lg gap-3 overflow-auto custom-scrollbar">
+                    <div class="flex items-center gap-5">
+                        <label for="username" class="text-sky-700 text-[20px]">Username</label>
+                        <input type="text" name="username" id="" placeholder="Enter your username" class="min-w-[20vw]">
+                    </div>
+                    <div class="flex items-center gap-5">
+                        <label for="text" class="text-sky-700 text-[20px]">Comment</label>
+                        <textarea name="text" id="text" cols="30" rows="5" class="min-w-[20vw]" placeholder="Enter your comment"></textarea>
+                    </div>
+                </section>
+
+                <section class="flex justify-evenly items-center bg-sky-50 w-[80%] h-[5vh] rounded-lg text-sky-700">
+                    <button type="submit" class="hover:bg-sky-100 hover:p-2">Submit</button>
+                    <a href="/" class="hover:bg-sky-100 hover:p-2">See All Comments</a>
+                </section>
+            </form>
+        </div>
+    </div>
+    <%- include("partials/footer") %>
