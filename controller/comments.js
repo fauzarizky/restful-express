@@ -34,23 +34,23 @@ let comments = [
 ];
 
 exports.renderIndex = async (req, res) => {
-  res.render("index", { comments, url: req.protocol + "://" + req.headers.host });
+  res.render("index", { comments });
 };
 
 exports.renderCreate = async (req, res) => {
-  res.render("create", { url: req.protocol + "://" + req.headers.host });
+  res.render("create");
 };
 
 exports.renderCommentById = async (req, res) => {
   const { id } = req.params;
   const comment = comments.find((c) => c.id === id);
-  res.render("show", { comment, url: req.protocol + "://" + req.headers.host });
+  res.render("show", { comment });
 };
 
 exports.renderEditCommentById = async (req, res) => {
   const { id } = req.params;
   const comment = comments.find((c) => c.id === id);
-  res.render("edit", { comment, url: req.protocol + "://" + req.headers.host });
+  res.render("edit", { comment });
 };
 
 exports.createComment = async (req, res) => {
